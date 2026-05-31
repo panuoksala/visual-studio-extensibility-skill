@@ -9,7 +9,7 @@
 | Add an output pane | OutputWindowSample |
 | Limit an editor extension to matching files | DocumentSelectorSample |
 | Combine multiple extensibility areas in one sample | MarkdownLinter |
-| Consume classic SDK services through dependency injection | CommentRemover |
+| Consume classic SDK services through dependency injection | CommentRemover (in-proc / hybrid only) |
 | Add a tool window | ToolWindowSample |
 | Show a prompt | UserPromptSample |
 | Show a dialog | DialogSample |

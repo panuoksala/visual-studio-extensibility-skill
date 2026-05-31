@@ -23,16 +23,16 @@ Claude Code supports `SKILL.md`-based skills directly.
 
 ### GitHub Copilot CLI
 
-GitHub Copilot CLI does not consume `SKILL.md` packages as a native skill format, so use this repo as a reference pack for Copilot instructions.
+GitHub Copilot CLI now supports agent skills directly.
 
 1. Install Copilot CLI if needed:
    - Windows: `winget install GitHub.Copilot`
    - npm: `npm install -g @github/copilot`
-2. Clone this repository somewhere accessible to your workspace.
-3. Copy the guidance you want into repo instructions, typically:
-   - `.github\copilot-instructions.md`, or
-   - `.github\instructions\visual-studio-extensibility.instructions.md`
-4. Keep `developing-visual-studio-extensibility\references\` nearby and point Copilot CLI at those files when working on Visual Studio extension tasks.
+2. Copy `developing-visual-studio-extensibility\` to either:
+   - `~/.copilot/skills\developing-visual-studio-extensibility\` for a user-wide install, or
+   - `<your-repo>\.github\skills\developing-visual-studio-extensibility\` for a repo-local install
+3. Start Copilot CLI in the target repo with `copilot`.
+4. Run `/skills` to confirm the skill is available and enabled.
 
 ### Visual Studio Code
 

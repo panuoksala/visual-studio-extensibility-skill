@@ -11,6 +11,7 @@
   `ExecuteCommandAsync`, `CommandConfiguration`, or `CommandPlacement`.
 - **Official Learn article to consult first:**
   `learn.microsoft.com/visualstudio/extensibility/visualstudio.extensibility/command/command`
+- **Sample-backed starting points:** Use `SimpleRemoteCommandSample` for the most direct command baseline, `CommandParentingSample` when placement or parenting is the main question, and `InsertGuid` when the command also edits the active document.
 - **Common limitation or caveat:** Placement is limited to typed `CommandPlacement.KnownPlacements`
   locations (`ExtensionsMenu`, `ToolsMenu`, `ViewOtherWindowsMenu`, etc.). Arbitrary menu
   injection requires in-proc VSSDK. Activation constraints (`EnabledWhen` / `VisibleWhen`) are
@@ -24,6 +25,7 @@
   margin or adornment; listen to caret or selection changes; or access `ITextDocumentSnapshot`.
 - **Official Learn article to consult first:**
   `learn.microsoft.com/visualstudio/extensibility/visualstudio.extensibility/editor/editor`
+- **Sample-backed starting points:** Use `InsertGuid` for command-triggered text edits, `DocumentSelectorSample` when applicability depends on file path matching, `WordCountMargin` for editor margins, and `MarkdownLinter` when the scenario spans multiple editor-facing components.
 - **Common limitation or caveat:** Not all editor APIs have VisualStudio.Extensibility equivalents
   yet; advanced editor scenarios (e.g., full language service integration) typically require the
   hybrid path. Route to `hybrid-and-migration.md` when coverage is incomplete.
@@ -36,6 +38,7 @@
   progress text in the Output window.
 - **Official Learn article to consult first:**
   `learn.microsoft.com/visualstudio/extensibility/visualstudio.extensibility/output-window/output-window`
+- **Sample-backed starting points:** Use `OutputWindowSample` for the basic output-pane flow, and `MarkdownLinter` when the user needs a broader example that includes output-window reporting alongside other extension components.
 - **Common limitation or caveat:** Extensions create their own named channel; they cannot write
   to VS-owned channels (Build, Debug, etc.). There is no rich-text or color support beyond plain
   text in the current API.

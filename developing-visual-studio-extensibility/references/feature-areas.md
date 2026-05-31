@@ -38,7 +38,7 @@
   progress text in the Output window.
 - **Official Learn article to consult first:**
   `learn.microsoft.com/visualstudio/extensibility/visualstudio.extensibility/output-window/output-window`
-- **Sample-backed starting points:** Use `OutputWindowSample` for the basic output-pane flow, and `CommentRemover` when the user also needs a concrete example of combining prompts, progress reporting, and classic SDK service consumption.
+- **Sample-backed starting points:** Use `OutputWindowSample` for the basic output-pane flow, and `MarkdownLinter` when the user needs a broader example that includes output-window reporting alongside other extension components.
 - **Common limitation or caveat:** Extensions create their own named channel; they cannot write
   to VS-owned channels (Build, Debug, etc.). There is no rich-text or color support beyond plain
   text in the current API.

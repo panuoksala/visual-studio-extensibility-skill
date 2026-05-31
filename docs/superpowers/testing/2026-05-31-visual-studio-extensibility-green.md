@@ -110,12 +110,9 @@ results — all gaps were already resolved in the current file state.
   `install-and-prereqs.md` and `concepts.md`. The routing table includes "output window"
   as a keyword trigger, closing the gap where generic output-window queries might otherwise
   miss the feature-areas file.
-- **Sample mapping improved:** The skill now routes beyond the core command and hybrid cases to
-  the broader Learn-backed sample catalog, including `OutputWindowSample`, `DocumentSelectorSample`,
-  `MarkdownLinter`, `ToolWindowSample`, `UserPromptSample`, `DialogSample`, `VSProjectQueryAPISample`,
-  `WordCountMargin`, and the debugger visualizer samples. All samples are attributed to
-  `microsoft/VSExtensibility` under `New_Extensibility_Model/Samples/`, and the curated table is
-  now clearly a routing layer rather than an exhaustive list.
+- **Sample mapping improved:** `samples-and-patterns.md` now includes additional sample entries
+  beyond the core command and hybrid cases, and it now makes clear that the curated table is a
+  routing layer to the official sample catalog rather than an exhaustive list.
 - **Hybrid guidance improved:** `hybrid-and-migration.md` opens with a "Model comparison
   reference" section pointing to the official three-model comparison page and its numbered
   Scenarios 1–4 decision tree. Both hybrid architectural models are clearly distinguished

@@ -9,6 +9,42 @@ It helps an agent:
 - point to the right official Microsoft Learn articles and sample projects
 - explain when pure out-of-proc development is enough and when a hybrid or classic approach is required
 
+## Installation and editor setup
+
+### Claude Code
+
+Claude Code supports `SKILL.md`-based skills directly.
+
+1. Copy `developing-visual-studio-extensibility\` to either:
+   - `~/.claude/skills\developing-visual-studio-extensibility\` for a user-wide install, or
+   - `<your-repo>\.claude\skills\developing-visual-studio-extensibility\` for a project-local install
+2. Restart Claude Code or reload the project.
+3. Run `/skills` and confirm `developing-visual-studio-extensibility` is available.
+
+### GitHub Copilot CLI
+
+GitHub Copilot CLI does not consume `SKILL.md` packages as a native skill format, so use this repo as a reference pack for Copilot instructions.
+
+1. Install Copilot CLI if needed:
+   - Windows: `winget install GitHub.Copilot`
+   - npm: `npm install -g @github/copilot`
+2. Clone this repository somewhere accessible to your workspace.
+3. Copy the guidance you want into repo instructions, typically:
+   - `.github\copilot-instructions.md`, or
+   - `.github\instructions\visual-studio-extensibility.instructions.md`
+4. Keep `developing-visual-studio-extensibility\references\` nearby and point Copilot CLI at those files when working on Visual Studio extension tasks.
+
+### Visual Studio Code
+
+VS Code can use the same guidance through GitHub Copilot custom instructions or prompt files.
+
+1. Install the **GitHub Copilot** extension in Visual Studio Code.
+2. Clone this repository and open it in VS Code, or copy the relevant guidance into your target repo.
+3. Choose one of these integration approaches:
+   - add the core guidance to `.github\copilot-instructions.md`, or
+   - convert the routing guidance into prompt files under `.copilot\`
+4. Use `developing-visual-studio-extensibility\SKILL.md` as the router and the files in `developing-visual-studio-extensibility\references\` as the source material for those instructions or prompts.
+
 ## What is included
 
 ```text

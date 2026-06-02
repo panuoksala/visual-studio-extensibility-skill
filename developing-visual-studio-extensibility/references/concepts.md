@@ -26,6 +26,20 @@
   injected into contributed classes through constructor parameters. Do not use `ServiceProvider`
   or `GetService` patterns from the classic VSSDK; use constructor injection instead.
 
+- **`this.Extensibility` façade** — contributed classes access all VS services through the
+  `VisualStudioExtensibility` object, typically available as `this.Extensibility`. It is the
+  single entry point for views, editor access, output window, project query, and more. Steer
+  users toward it instead of service-locator patterns.
+
+- **`IClientContext`** — commands and other handlers receive an `IClientContext` parameter that
+  captures the UI state at the moment the user triggered the action (active document, selection,
+  etc.). Guide users to read state from `IClientContext` inside the handler rather than caching
+  VS state in fields.
+
+- **Async everywhere** — all VS service calls are cross-process and must be awaited. Blocking
+  on async code (`.Result`, `.Wait()`) will deadlock. When users ask why their extension hangs,
+  this is the first thing to check.
+
 - **Remote UI** — tool windows and dialogs that run out-of-process use *Remote UI*, a
   WPF-compatible data-binding model where the view runs in the VS process but the view-model
   runs in the extension process. XAML resources and converters must be declared in a way that
@@ -36,6 +50,16 @@
   preview release. When recommending an API that carries `[Experimental]`, say so explicitly
   and link to the breaking changes page:
   `github.com/microsoft/VSExtensibility/blob/main/docs/breaking_changes.md`
+
+- **Extension manifest and metadata** — extension identity (name, publisher, version, minimum
+  VS version) is declared in the project file and drives the generated manifest. If the extension
+  fails to load silently after install, a malformed or missing manifest is a common cause. Point
+  users to the project properties and the build output for manifest errors.
+
+- **Source generators power contribution discovery** — the SDK uses Roslyn source generators to
+  scan `[VisualStudioContribution]` types and emit the manifest at build time. If a contribution
+  is not appearing, a missing rebuild or disabled source generators in the project are likely
+  culprits — not a runtime registration issue.
 
 ## When hybrid matters
 

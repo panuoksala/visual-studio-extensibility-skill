@@ -9,11 +9,29 @@ It helps an agent:
 - point to the right official Microsoft Learn articles and sample projects
 - explain when pure out-of-proc development is enough and when a hybrid or classic approach is required
 
-## Installation and editor setup
+## Installation
 
-### Claude Code
+### Quick install (recommended)
 
-Claude Code supports `SKILL.md`-based skills directly.
+Install globally for all your projects:
+
+```bash
+npx skills add panuoksala/visual-studio-extensibility-skill -g
+```
+
+Or install locally in a specific project:
+
+```bash
+npx skills add panuoksala/visual-studio-extensibility-skill
+```
+
+This works with any agent that supports the open skills ecosystem (Claude Code, Cursor, Windsurf, GitHub Copilot, and others). After installing, the skill is available automatically when you work on Visual Studio extension projects.
+
+### Manual installation
+
+If you prefer to install without the CLI, copy the `developing-visual-studio-extensibility\` folder into your agent's skills directory.
+
+#### Claude Code
 
 1. Copy `developing-visual-studio-extensibility\` to either:
    - `~/.claude/skills\developing-visual-studio-extensibility\` for a user-wide install, or
@@ -21,20 +39,14 @@ Claude Code supports `SKILL.md`-based skills directly.
 2. Restart Claude Code or reload the project.
 3. Run `/skills` and confirm `developing-visual-studio-extensibility` is available.
 
-### GitHub Copilot CLI
+#### GitHub Copilot CLI
 
-GitHub Copilot CLI now supports agent skills directly.
-
-1. Install Copilot CLI if needed:
-   - Windows: `winget install GitHub.Copilot`
-   - npm: `npm install -g @github/copilot`
-2. Copy `developing-visual-studio-extensibility\` to either:
+1. Copy `developing-visual-studio-extensibility\` to either:
    - `~/.copilot/skills\developing-visual-studio-extensibility\` for a user-wide install, or
    - `<your-repo>\.github\skills\developing-visual-studio-extensibility\` for a repo-local install
-3. Start Copilot CLI in the target repo with `copilot`.
-4. Run `/skills` to confirm the skill is available and enabled.
+2. Run `/skills` to confirm the skill is available and enabled.
 
-### Visual Studio Code
+#### Visual Studio Code
 
 VS Code can use the same guidance through GitHub Copilot custom instructions or prompt files.
 
